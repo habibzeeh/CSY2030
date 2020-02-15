@@ -1,10 +1,11 @@
 package com.property.manager;
 
 
-import com.property.manager.Data.Read;
-import com.property.manager.Data.Serialize;
+import com.property.manager.Manager.AdminManager;
+import com.property.manager.Models.Admin;
 
 import javax.swing.*;
+import java.util.List;
 
 
 public class test {
@@ -13,9 +14,12 @@ public class test {
 
     public static void main(String[] args){
 
-        //System.out.print("test");
-        //Serialize.serializeFile();
-        Read.Read();
+        AdminManager adminManager = new AdminManager();
+        /*Admin admin1 = new Admin("Abdul","abdul","123");
+        adminManager.addAdmin(admin1);
+        Admin admin2 = new Admin("Huma","huma","123");
+        adminManager.addAdmin(admin2);*/
+        List<Admin> admins =  adminManager.getAdminList();
 
         JFrame frame = new JFrame("test");
         frame.setContentPane(new test().panel1);
