@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FileManager {
 
-    String filePath;
+    private String filePath;
 
     public FileManager(String fileName) {
         this.filePath = "Data/"+fileName;
