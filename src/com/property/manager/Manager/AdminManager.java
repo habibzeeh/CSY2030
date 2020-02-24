@@ -28,14 +28,4 @@ public class AdminManager {
         return adminList;
     }
 
-    public void deleteAdmin(String username){
-        int i = -1;
-        for (Admin ad:adminList)
-            if(ad.getUsername().equals(username))
-                i = adminList.indexOf(ad);
-        if(i!=-1)
-            adminList.remove(i);
-        fileManager.saveFile(adminList);
-    }
-
 }
