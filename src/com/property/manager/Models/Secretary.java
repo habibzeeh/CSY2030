@@ -1,29 +1,21 @@
 package com.property.manager.Models;
 
+import com.sun.source.doctree.SerialDataTree;
+
 import java.io.Serializable;
 
 public class Secretary implements Serializable {
 
-    private String id;
     private String name;
     private String phoneNumber;
     private String username;
     private String password;
 
-    public Secretary(String id, String name, String phoneNumber, String username, String password) {
-        this.id = id;
+    public Secretary(String name, String phoneNumber, String username, String password) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.password = password;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -57,5 +49,4 @@ public class Secretary implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

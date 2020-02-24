@@ -20,8 +20,6 @@ public class test {
         Admin admin2 = new Admin("Huma","huma","123");
         adminManager.addAdmin(admin2);*/
         List<Admin> admins =  adminManager.getAdminList();
-        adminManager.deleteAdmin("huma");
-        admins = adminManager.getAdminList();
 
         JFrame frame = new JFrame("test");
         frame.setContentPane(new test().panel1);
