@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.AdminHomePageController">
+
+    <MenuBar fx:id="menuBarTop" layoutY="-1.0" StackPane.alignment="TOP_LEFT">
+        <menus>
+            <Menu mnemonicParsing="false" text="Add">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Add House" />
+                    <MenuItem mnemonicParsing="false" text="Add Flat" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="View">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="View House" />
+                    <MenuItem mnemonicParsing="false" text="View Flat" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Full Screen" />
+               <MenuItem mnemonicParsing="false" text="Sign Out " />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <JFXDrawer />
+    <JFXTabPane layoutY="25.0">
+        <tabs>
+            <Tab text="Home">
+                <content>
+                    <HBox alignment="CENTER" layoutX="43.0">
+                        <children>
+                            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#handleFlatButton" prefHeight="400.0" prefWidth="307.0" text="BRANCH" textAlignment="CENTER">
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="BUILDING" size="200" text="" wrappingWidth="153.42857360839844" />
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                </HBox.margin>
+                            </Button>
+                        </children>
+                        <padding>
+                            <Insets top="30.0" />
+                        </padding>
+                    </HBox>
+                </content>
+            </Tab>
+            <Tab text="View Branches ">
+                <content>
+                    <HBox alignment="CENTER" layoutX="43.0">
+                        <children>
+                            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="400.0" prefWidth="249.0" text="View Braches">
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="BUILDING" size="200" text="" wrappingWidth="155.42857360839844" />
+                                </graphic>
+                                <HBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                </HBox.margin>
+                            </Button>
+                        </children>
+                    </HBox>
+                </content>
+            </Tab>
+        </tabs>
+    </JFXTabPane>
+</VBox>

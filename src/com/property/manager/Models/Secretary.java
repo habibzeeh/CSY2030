@@ -1,6 +1,5 @@
 package com.property.manager.Models;
 
-import com.sun.source.doctree.SerialDataTree;
 
 import java.io.Serializable;
 

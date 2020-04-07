@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.AddFlatController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="      Add Flat" textAlignment="CENTER" wrappingWidth="599.13671875">
+               <font>
+                  <Font name="Bodoni MT" size="66.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="S_RESIZE" />
+               </cursor>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets left="30.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </HBox>
+      <JFXDrawersStack />
+      <VBox prefHeight="449.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="Address" labelFloat="true" promptText="Address">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="Adress1" labelFloat="true" prefColumnCount="6" prefHeight="21.0" prefWidth="440.0" promptText="No.Room">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="Adress2" labelFloat="true" promptText="Floor.No">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="Adress3" labelFloat="true" promptText="Selling Price">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="Adress4" labelFloat="true" promptText="Sold Price">
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="Adress41" labelFloat="true" promptText="Monthly Charge ">
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+               </VBox.margin>
+            </JFXTextField>
+         </children>
+         <padding>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="203.0" prefWidth="650.0">
+         <children>
+            <JFXButton prefHeight="74.0" prefWidth="94.0" text="Back" onAction="#handleBackButton">
+               <HBox.margin>
+                  <Insets top="-30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="74.0" prefWidth="94.0" text="Add">
+               <HBox.margin>
+                  <Insets left="10.0" top="-30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>
