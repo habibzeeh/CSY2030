@@ -1,29 +1,38 @@
 package com.property.manager.Views;
 
-import com.property.manager.Manager.AdminManager;
-import com.property.manager.Models.Admin;
-import com.property.manager.Views.utils.ImagePanel;
-import com.property.manager.test;
-
 import javax.swing.*;
-import java.util.List;
+import java.awt.*;
 
-public class SplashScreen {
-    private JPanel panel1;
+public class SplashScreen extends JFrame {
 
-    public static void main(String[] args){
-
-        ImagePanel backgroundImage = new ImagePanel(new ImageIcon("res\\drawable\\splash_background.jpg").getImage());
-
-        String p =  System.getProperty("user.dir");
+    private JPanel jPanel = new JPanel();
+    private JButton adminButton = new JButton();
+    private JButton staffButton = new JButton();
 
 
-        JFrame frame = new JFrame("Splash");
-        frame.getContentPane().add(backgroundImage);
-        //frame.setContentPane(new SplashScreen().panel1);
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public SplashScreen() throws HeadlessException {
 
+        setTitle("Property Manager");
+        setVisible(true);
+        setSize(1024,800);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        jPanel.setLayout(null);
+
+        adminButton.setIcon(new ImageIcon("res//drawable//admin_icon.png"));
+        adminButton.setBounds(100,100,128,128);
+        staffButton.setIcon(new ImageIcon("res//drawable//admin_icon.png"));
+        staffButton.setBounds(50,50,128,128);
+        jPanel.add(adminButton);
+        jPanel.add(staffButton);
+
+        add(jPanel);
+        validate();
     }
+
+    public static void main(String[] args) {
+
+        SplashScreen splashScreen = new SplashScreen();
+    }
+
 }
