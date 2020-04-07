@@ -15,17 +15,20 @@ public class AdminManager {
     public AdminManager() {
         fileManager = new FileManager(fileName);
         adminList = (List<Admin>)fileManager.ReadFile();
-        if(adminList == null)
+        if(adminList == null) {
             adminList = new ArrayList<>();
+            Admin admin = new Admin("Halima Habbib","admin","1234");
+            addAdmin(admin);
+        }
     }
 
-    public void addAdmin(Admin admin){
+    private void addAdmin(Admin admin){
         adminList.add(admin);
         fileManager.saveFile(adminList);
     }
 
-    public List<Admin> getAdminList() {
-        return adminList;
+    public Admin getAdmin(){
+        return adminList.get(0);
     }
 
 }

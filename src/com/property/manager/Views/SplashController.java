@@ -1,5 +1,6 @@
 package com.property.manager.Views;
 
+import com.property.manager.Manager.LoginManager;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -15,8 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SplashController implements Initializable {
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

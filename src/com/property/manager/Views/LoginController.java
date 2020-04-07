@@ -1,5 +1,8 @@
 package com.property.manager.Views;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import com.property.manager.Manager.LoginManager;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -16,9 +19,16 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    LoginManager loginManager;
+    @FXML
+    JFXTextField username;
+    @FXML
+    JFXPasswordField password;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        loginManager = new LoginManager();
 
     }
 
@@ -29,7 +39,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
-        openStaffScene(event);
+        if(loginManager.checkLogin(username.getText(),password.getText()))
+            openStaffScene(event);
+        else
+            password.setPromptText("Invalid Password..");
+
     }
 
     private void openSplashScene(Event e){
