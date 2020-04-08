@@ -2,9 +2,9 @@ package com.property.manager.Models;
 
 import java.io.Serializable;
 
-public class Branche implements Serializable {
+public class Branch implements Serializable {
 
-    private String name;
+    private  String name;
     private  String address;
     private  String phoneNumber;
     private  String email;
@@ -12,7 +12,7 @@ public class Branche implements Serializable {
     private  String userName;
     private  String password;
 
-    public Branche(String name, String address, String phoneNumber, String email, String webAddress, String userName, String password) {
+    public Branch(String name, String address, String phoneNumber, String email, String webAddress, String userName, String password) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;

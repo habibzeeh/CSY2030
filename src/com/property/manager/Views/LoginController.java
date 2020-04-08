@@ -40,7 +40,10 @@ public class LoginController implements Initializable {
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         if(loginManager.checkLogin(username.getText(),password.getText()))
-            openStaffScene(event);
+            if(username.getText().equals("admin"))
+                openAdminScene(event);
+            else
+                openStaffScene(event);
         else
             password.setPromptText("Invalid Password..");
 
@@ -67,6 +70,23 @@ public class LoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StaffHomePage.fxml"));
             Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             stage.setTitle("Staff Panel");
+            Scene scene = new Scene(loader.load(),width,height);
+            scene.getStylesheets().add(getClass().getResource("dark-theme.css").toString());
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        }catch (IOException io){
+            io.printStackTrace();
+        }
+
+    }
+
+    private void openAdminScene(Event e){
+        try {
+            int width = (int) Screen.getPrimary().getBounds().getWidth();
+            int height = (int) Screen.getPrimary().getBounds().getHeight();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminHomePage.fxml"));
+            Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+            stage.setTitle("Admin Panel");
             Scene scene = new Scene(loader.load(),width,height);
             scene.getStylesheets().add(getClass().getResource("dark-theme.css").toString());
             stage.setScene(scene);

@@ -26,22 +26,21 @@ public class AddFlatController implements Initializable {
         openStaffPage(event);
     }
 
-    private void openStaffPage(Event e){
+    private void openStaffPage(Event e) {
         try {
             int width = (int) Screen.getPrimary().getBounds().getWidth();
             int height = (int) Screen.getPrimary().getBounds().getHeight();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("StaffHomePage.fxml"));
-            Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             stage.setTitle("Property System");
-            Scene scene = new Scene(loader.load(),width,height);
+            Scene scene = new Scene(loader.load(), width, height);
             scene.getStylesheets().add(getClass().getResource("dark-theme.css").toString());
             stage.setScene(scene);
             stage.setMaximized(true);
-        }catch (IOException io){
+        } catch (IOException io) {
             io.printStackTrace();
         }
 
     }
+
 }
-
-
