@@ -1,5 +1,6 @@
 package com.property.manager.Views;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -64,6 +65,12 @@ public class AdminHomePageController implements Initializable {
             io.printStackTrace();
         }
 
+    }
+
+    @FXML
+    private void handleExitButton(ActionEvent event) {
+        Platform.exit();
+        System.exit(0);
     }
 
 }

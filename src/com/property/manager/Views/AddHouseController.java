@@ -1,5 +1,8 @@
 package com.property.manager.Views;
 
+import com.jfoenix.controls.JFXTextField;
+import com.property.manager.Manager.PropertyManager;
+import com.property.manager.Models.Property;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -7,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuBar;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -18,12 +22,15 @@ import java.util.ResourceBundle;
 
 public class AddHouseController implements Initializable {
 
+    PropertyManager PropertyManager;
     @FXML
-    MenuBar menuBarTop;
-
+    JFXTextField address,noroom,sellingprice,soldprice,nofloors;
+    @FXML
+    CheckBox gardenBox,garageBox;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        PropertyManager = new PropertyManager();
     }
 
     @FXML
@@ -47,5 +54,29 @@ public class AddHouseController implements Initializable {
         }
 
     }
+
+
+    @FXML
+    private void handleAddButton(ActionEvent event) {
+        addHouse();
+        openStaffPage(event);
+    }
+
+    private void addHouse(){
+
+        Property property = new Property(
+                address.getText(),
+                noroom.getText(),
+                sellingprice.getText(),
+                soldprice.getText(),
+                nofloors.getText(),
+                gardenBox.isSelected(),
+                garageBox.isSelected());
+
+        PropertyManager.addProperty(property);
+    }
+
 }
+
+
 

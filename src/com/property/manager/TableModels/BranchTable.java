@@ -14,7 +14,8 @@ public class BranchTable implements Serializable {
     private  SimpleStringProperty userName;
     private  SimpleStringProperty password;
 
-    public BranchTable(String name, String address, String phoneNumber, String email, String webAddress, String userName, String password) {
+    public BranchTable(String name, String address, String phoneNumber, String email, String webAddress, String userName,
+                       String password) {
         this.name = new SimpleStringProperty(name);
         this.address = new SimpleStringProperty(address);
         this.phoneNumber = new SimpleStringProperty(phoneNumber);

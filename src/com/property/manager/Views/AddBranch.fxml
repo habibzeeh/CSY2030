@@ -4,32 +4,30 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.AddBranchController">
-   <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="      Add Branch" textAlignment="CENTER" wrappingWidth="599.13671875">
-               <font>
-                  <Font name="Bodoni MT" size="66.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="S_RESIZE" />
-               </cursor>
-            </Text>
-         </children>
-         <opaqueInsets>
-            <Insets left="30.0" />
-         </opaqueInsets>
-         <padding>
-            <Insets left="50.0" />
-         </padding>
-      </HBox>
+<?import javafx.scene.control.Button?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.AddBranchController">
+    <HBox>
+               <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="20" prefWidth="20" styleClass="back-button">
+                  <graphic>
+                     <FontAwesomeIconView glyphName="CHEVRON_CIRCLE_LEFT" size="20" styleClass="back-button-icon" />
+                  </graphic>
+               </Button>
+               <Text fill="White" strokeType="OUTSIDE" strokeWidth="0.0" text=" Add Branch" textAlignment="CENTER">
+                  <font>
+                     <Font name="Bodoni MT" size="46" />
+                  </font>
+               </Text>
+         </HBox>
       <VBox prefHeight="557.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXTextField fx:id="name" labelFloat="true" promptText="Name">
@@ -113,5 +111,4 @@
             <Insets bottom="80.0" />
          </VBox.margin>
       </HBox>
-   </children>
 </VBox>

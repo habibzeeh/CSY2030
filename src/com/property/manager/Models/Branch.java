@@ -12,7 +12,8 @@ public class Branch implements Serializable {
     private  String userName;
     private  String password;
 
-    public Branch(String name, String address, String phoneNumber, String email, String webAddress, String userName, String password) {
+    public Branch(String name, String address, String phoneNumber, String email, String webAddress, String userName,
+                  String password) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;

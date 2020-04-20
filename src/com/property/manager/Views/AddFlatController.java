@@ -1,5 +1,8 @@
 package com.property.manager.Views;
 
+import com.jfoenix.controls.JFXTextField;
+import com.property.manager.Manager.PropertyManager;
+import com.property.manager.Models.Property;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -15,10 +18,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddFlatController implements Initializable {
+    PropertyManager propertyManager;
+    @FXML
+    JFXTextField address,noroom,sellingprice,soldprice,nofloors,monthlycharge;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        propertyManager = new PropertyManager();
     }
 
     @FXML
@@ -42,5 +49,26 @@ public class AddFlatController implements Initializable {
         }
 
     }
+
+    @FXML
+    private void handleAddButton(ActionEvent event) {
+        addFlat();
+        openStaffPage(event);
+    }
+
+    private void addFlat(){
+
+        Property property = new Property(
+                address.getText(),
+                noroom.getText(),
+                sellingprice.getText(),
+                soldprice.getText(),
+                nofloors.getText(),
+                monthlycharge.getText()
+        );
+
+        propertyManager.addProperty(property);
+    }
+
 
 }

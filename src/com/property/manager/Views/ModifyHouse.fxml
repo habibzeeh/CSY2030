@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawersStack?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.AddHouseController">
-    <HBox prefHeight="100.0" prefWidth="200.0">
-        <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="  Modify House " textAlignment="CENTER" wrappingWidth="599.13671875">
-                <font>
-                    <Font name="Bodoni MT" size="66.0" />
-                </font>
-                <cursor>
-                    <Cursor fx:constant="S_RESIZE" />
-                </cursor>
-            </Text>
-        </children>
-        <opaqueInsets>
-            <Insets left="30.0" />
-        </opaqueInsets>
-        <padding>
-            <Insets left="50.0" />
-        </padding>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Button?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.property.manager.Views.ModifyHouseController">
+    <HBox>
+        <Button onAction="#handleBackButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="20" prefWidth="20" styleClass="back-button">
+            <graphic>
+                <FontAwesomeIconView glyphName="CHEVRON_CIRCLE_LEFT" size="20"  />
+            </graphic>
+        </Button>
+        <Text fill="White" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify House" textAlignment="CENTER">
+            <font>
+                <Font name="Bodoni MT" size="46" />
+            </font>
+        </Text>
     </HBox>
     <JFXDrawersStack />
     <VBox prefHeight="449.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <children>
-            <JFXTextField fx:id="Address" labelFloat="true" promptText="Address">
+            <JFXTextField fx:id="address" labelFloat="true" promptText="Address">
                 <VBox.margin>
                     <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
                 </VBox.margin>
             </JFXTextField>
-            <JFXTextField fx:id="Adress1" labelFloat="true" prefColumnCount="6" prefHeight="21.0" prefWidth="440.0" promptText="No.Room">
-                <VBox.margin>
-                    <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
-                </VBox.margin>
-                <padding>
-                    <Insets top="30.0" />
-                </padding>
-            </JFXTextField>
-            <JFXTextField fx:id="Adress2" labelFloat="true" promptText="No.Floors">
+            <JFXTextField fx:id="noroom" labelFloat="true" prefColumnCount="6" prefHeight="21.0" prefWidth="440.0" promptText="No.Room">
                 <VBox.margin>
                     <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
                 </VBox.margin>
@@ -49,7 +42,7 @@
                     <Insets top="30.0" />
                 </padding>
             </JFXTextField>
-            <JFXTextField fx:id="Adress3" labelFloat="true" promptText="Selling Price">
+            <JFXTextField fx:id="nofloors" labelFloat="true" promptText="No.Floors">
                 <VBox.margin>
                     <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
                 </VBox.margin>
@@ -57,7 +50,7 @@
                     <Insets top="30.0" />
                 </padding>
             </JFXTextField>
-            <JFXTextField fx:id="Adress4" labelFloat="true" promptText="Sold Price">
+            <JFXTextField fx:id="sellingprice" labelFloat="true" promptText="Selling Price">
                 <VBox.margin>
                     <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
                 </VBox.margin>
@@ -65,9 +58,17 @@
                     <Insets top="30.0" />
                 </padding>
             </JFXTextField>
-            <HBox prefHeight="85.0" prefWidth="620.0">
+            <JFXTextField fx:id="soldprice" labelFloat="true" promptText="Sold Price">
+                <VBox.margin>
+                    <Insets bottom="1.0" left="90.0" right="90.0" top="10.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets top="30.0" />
+                </padding>
+            </JFXTextField>
+            <HBox prefHeight="104.0" prefWidth="620.0">
                 <children>
-                    <CheckBox mnemonicParsing="false" opacity="0.32" text="Garden" textFill="#f5f2f2">
+                    <CheckBox fx:id="gardenBox" mnemonicParsing="false" opacity="0.32" text="Garden" textFill="#f5f2f2">
                         <HBox.margin>
                             <Insets left="110.0" top="-10.0" />
                         </HBox.margin>
@@ -75,9 +76,9 @@
                             <Font size="21.0" />
                         </font>
                     </CheckBox>
-                    <CheckBox mnemonicParsing="false" opacity="0.32" text="Garage" textFill="#f8f7f7">
+                    <CheckBox fx:id="garageBox" mnemonicParsing="false" opacity="0.32" text="Garage" textFill="#f8f7f7">
                         <HBox.margin>
-                            <Insets left="40.0" top="-10.0" />
+                            <Insets left="110.0" top="-10.0" />
                         </HBox.margin>
                         <font>
                             <Font size="21.0" />
@@ -95,7 +96,7 @@
     </VBox>
     <HBox alignment="CENTER" prefHeight="379.0" prefWidth="650.0">
         <children>
-            <JFXButton onAction="#handleBackButton" prefHeight="74.0" prefWidth="94.0" text="Back">
+            <JFXButton prefHeight="74.0" prefWidth="94.0" onAction="#handleModifyButton" text="Modify">
                 <HBox.margin>
                     <Insets top="-30.0" />
                 </HBox.margin>
@@ -103,15 +104,15 @@
                     <Font size="18.0" />
                 </font>
             </JFXButton>
-            <JFXButton prefHeight="74.0" prefWidth="94.0" text="Modify">
-                <HBox.margin>
-                    <Insets top="-30.0" />
-                </HBox.margin>
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </JFXButton>
-         <JFXButton prefHeight="74.0" prefWidth="94.0" text="Sold">
+         <JFXButton prefHeight="74.0" prefWidth="94.0" onAction="#handledeleteButton" text="Delate">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <HBox.margin>
+               <Insets top="-30.0" />
+            </HBox.margin>
+         </JFXButton>
+         <JFXButton prefHeight="74.0" prefWidth="94.0" onAction="#handleSoldButton" text="Sold">
             <font>
                <Font size="18.0" />
             </font>
